@@ -1,0 +1,88 @@
+﻿@model Amani_backOffice.AfterBeforeImage
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>AfterBeforeImage</h4>
+        <hr />
+        
+
+        <div class="form-group">
+           
+           
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.url_picture_before, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+               
+
+                        <input type="file" name="url_picture_before" id="url_picture_before" style="width: 100%;" />
+
+
+                  
+               
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.url_picture_after, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+               
+                
+                   
+                <input type="file" name="url_picture_after" id="url_picture_after" style="width: 100%;" />
+                
+
+                
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.statuss, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <input type="checkbox" id="status" name="status" />
+                </div>
+           
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.first_title, htmlAttributes: new { @class = "control-label col-md-2" })
+            
+            
+            <div class="col-md-10">
+                <input type="text" id="first_title" name="first_title" />
+            </div>
+           
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.secoundry_title, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="text" id="secoundry_title" name="secoundry_title" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

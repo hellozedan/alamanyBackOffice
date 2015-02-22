@@ -24,8 +24,10 @@
             @Html.LabelFor(model => model.url_picture_before, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                
-
+                @if (Model!=null&&Model.id != null)
+                { 
                         <input type="file" name="url_picture_before" id="url_picture_before" style="width: 100%;" />
+                }
 
 
                   
@@ -38,8 +40,10 @@
             <div class="col-md-10">
                
                 
-                   
-                <input type="file" name="url_picture_after" id="url_picture_after" style="width: 100%;" />
+@if (Model != null && Model.id != null)
+                {
+                <input type="file" name="url_picture_after" id="url_picture_after" style="width: 100%;" onclose="sss()" />
+}
                 
 
                 
@@ -49,7 +53,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.statuss, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    <input type="checkbox" id="status" name="status" />
+                    <input type="checkbox" id="statuss" name="statuss" />
                 </div>
            
         </div>
@@ -86,3 +90,8 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
+<script>
+    function sss() {
+        alert("ddd");
+    }
+</script>

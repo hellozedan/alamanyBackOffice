@@ -20,16 +20,17 @@
         <div class="form-group">
             @Html.LabelFor(model => model.url_picture_before, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.url_picture_before, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.url_picture_before, "", new { @class = "text-danger" })
+                <input type="file" name="url_picture_before" id="url_picture_before" style="width: 100%;" />
+                <input type="button" value="upload" onclick="UploadPic('url_picture_before')" />
+
             </div>
         </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.url_picture_after, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.url_picture_after, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.url_picture_after, "", new { @class = "text-danger" })
+                <input type="file" name="url_picture_after" id="url_picture_after" style="width: 100%;"  />
+                <input type="button" value="upload" onclick="UploadPic('url_picture_after')" />
             </div>
         </div>
 
@@ -70,7 +71,11 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
-
+<script type="text/javascript">
+    function UploadPic(type) {
+        
+    }
+</script>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

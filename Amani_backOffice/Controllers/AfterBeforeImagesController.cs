@@ -48,11 +48,14 @@ namespace Amani_backOffice.Controllers
 
         public ActionResult Create(FormCollection fc)
         {
-           
-            
 
-            return null;
-
+            AfterBeforeImage afterBeforeImage = new AfterBeforeImage();
+            afterBeforeImage.first_title=fc["first_title"];
+            afterBeforeImage.secoundry_title=fc["secoundry_title"];
+            afterBeforeImage.statuss = (fc["statuss"]=="on")? true:false;
+            db.AfterBeforeImage.Add(afterBeforeImage);
+            db.SaveChanges();
+            return View(afterBeforeImage);
             
         }
 
